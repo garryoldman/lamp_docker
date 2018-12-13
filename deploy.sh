@@ -7,7 +7,7 @@ source ./deploy.conf
 pjdir=$prefix/$renewrepo
 lampdir=$pjdir/$lamprepo
 timestamp=`date +%F`
-filelist=`ls | grep $mask`
+filelist=`ls $pjdir/$renewrepo | grep $mask`
 
 function backup {
     if ! [ -d $backup ]; then
