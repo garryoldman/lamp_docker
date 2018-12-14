@@ -31,7 +31,7 @@ services:
     networks:
       - backend
     environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_ROOT_PASSWORD=Pizza2018
     container_name: mysql
 networks:
   frontend:
