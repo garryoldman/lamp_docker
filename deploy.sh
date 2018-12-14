@@ -52,16 +52,15 @@ cd $pjdir
 }
 
 function renew {
-filelist=`ls $pjdir/$renewrepo | grep $mask`
 cd $pjdir
+filelist=`ls $renewrepo | grep $mask`
+echo $filelist
 backup
 if [ -d $renewrepo ]; then
     rm -rfv $renewrepo
 fi
 git clone https://github.com/$renewuser/$renewrepo
 cp -rf $renewrepo/$filelist $lampdir/www/
-echo "DROP DATABASE IF EXISTS $renewrepo" | mysql 
-musql $renewrepo < $renewrepo/dump.sql
 }
 
 function installreq {
