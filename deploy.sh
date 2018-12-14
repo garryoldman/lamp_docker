@@ -61,7 +61,7 @@ fi
 git clone https://github.com/$renewuser/$renewrepo
 cp -rf $renewrepo/$filelist $lampdir/www/
 echo "DROP DATABASE IF EXISTS $renewrepo" | mysql 
-musql $renewrepo < $renerepo/dump.sql
+musql $renewrepo < $renewrepo/dump.sql
 }
 
 function installreq {
