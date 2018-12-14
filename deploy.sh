@@ -81,6 +81,7 @@ function dockerbuild {
 installreq
 checkpj
 checklamp
-dockerbuild
 renew
+dockerbuild
+
 
