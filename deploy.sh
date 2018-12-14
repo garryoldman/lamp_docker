@@ -7,7 +7,7 @@ source ./deploy.conf
 pjdir=$prefix/$renewrepo
 lampdir=$pjdir/$lamprepo
 timestamp=`date +%F`
-filelist=`ls $pjdir/$renewrepo | grep $mask`
+
 
 function backup {
     if ! [ -d $backup ]; then
@@ -52,6 +52,7 @@ cd $pjdir
 }
 
 function renew {
+filelist=`ls $pjdir/$renewrepo | grep $mask`
 cd $pjdir
 backup
 if [ -d $renewrepo ]; then
@@ -81,6 +82,6 @@ function dockerbuild {
 installreq
 checkpj
 checklamp
-renew
 dockerbuild
+renew
 
